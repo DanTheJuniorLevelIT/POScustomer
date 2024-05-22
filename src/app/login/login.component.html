@@ -1,0 +1,35 @@
+
+<section class="vh-100 justify-content-center align-items-center pt-5">
+    <div class="container-fluid h-custom pt-5">
+      <div class="row d-flex justify-content-center align-items-center pt-5">
+        <div class="col-md-1 col-xl-3 offset-xl-1 pt-5" style="font-size:1vw;">
+  <div class="login-page">
+      <div class="form">
+        <form class="login-form" [formGroup]="loginForm" (submit)="loginFunct()">
+  
+          <div class="imgcontainer">
+            <img src="./assets/userss.png" alt="Avatar" class="avatar">
+            <h1 class="pt-1">CUSTOMER</h1>
+          </div>
+  
+          <div class="container pt-1 ">
+            <div class="form-group pt-1 ">
+              <label id="email" for="usrname"><span class="glyphicon glyphicon-user"></span> Email</label>
+              <input formControlName="use" type="text" class="form-control" style="font-size:1vw;" id="usrname" placeholder="Enter email">
+            </div>
+            <div class="form-group ">
+              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+              <input formControlName="pas" type="password" class="form-control" style="font-size:1vw;" id="psw" placeholder="Enter password">
+            </div>
+            <button type="submit" name="send2">Login</button>
+            <!-- a routerLink="" -->
+          </div>
+  
+  
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  </section>

@@ -1,0 +1,78 @@
+<!-- <nav>
+    <ul>
+        <li><a routerLink="/home">Home</a></li>
+        <li><a routerLink="/academics">Academics</a></li>
+        <li><a routerLink="/about">About Us</a></li>
+        <li><a routerLink="/contact">Contact Us</a></li> 
+        <li><a routerLink="/dash/homecon">Login</a></li>
+    </ul> 
+</nav>
+
+
+<div class="header">
+    <h1>Welcome to</h1>
+    <h1>Northern Luzon Adventist College</h1>
+  </div> -->
+    
+  <div class="container-fluid">
+    <div class="row flex-nowrap">
+      <div
+        class="col-12 col-md-3 col-xl-2 px-sm-2 px-0 shadow text-white sidebar-to-hide"
+        style="background-color: #4b56d2; border-radius: 0px 20px 20px 0"
+      >
+        <div class="d-flex flex-column align-items-center pt-2 px-1 min-vh-80">
+          <br />
+          <div class="img d-flex flex-column">
+            <img src="./assets/custo.png" alt="" width="100px" />
+            <h3 class="ad pt-1">{{name}}</h3>
+            <br />
+            <!-- <div *ngFor="let r of registrar">
+              <p><b>Welcome,</b> {{ r.fname }}</p>
+            </div> -->
+          </div>
+          <div
+            class="btn-groups d-flex flex-column gap-2 mt-2 w-100 align-items-start"
+          >
+            <button class="btn text-white" [routerLink]="['/custo/Homepage']">
+              <img src="./assets/homee.png" width="30px" />&nbsp; Home
+            </button>
+            <!-- <button class="btn text-white" routerLink="/academics">
+              <img src="./assets/books.png" width="30px" />&nbsp; Academics
+            </button>
+            <button class="btn text-white" routerLink="/about">
+              <img src="./assets/stats.png" width="30px" />&nbsp; About
+            </button> -->
+            <!-- <button class="btn text-white" routerLink="/side/sched">
+              <img src="./assets/calendar.png" width="30px" />&nbsp; Schedule
+            </button> -->
+
+
+            <button class="btn text-white" [routerLink]="['/custo/Paidhomepage']">
+              <img src="./assets/pay.png" width="30px" />&nbsp; Transaction History
+            </button>
+            <button class="btn text-white" [routerLink]="['/custo/Accounthomepage']">
+                <img src="./assets/acc.png" width="30px" />&nbsp; Account
+              </button>
+
+
+                <button class="btn text-white " routerLink="/logpage/login">
+                  <img src="./assets/out.png" width="30px" />&nbsp; Logout
+                </button>
+  
+  
+            <!-- <a class="btn text-white mt-4" (click)="logout()">
+              <img src="./assets/exit.png" width="30px" />&nbsp; Logout
+            </a> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+  
+
+
+<!-- <router-outlet></router-outlet> -->
