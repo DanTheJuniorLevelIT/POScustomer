@@ -16,6 +16,22 @@ user:any;
 customer:any;
 userID: any;
 
+uploadedImage: string | ArrayBuffer | null = null;
+
+onFileSelected(event: Event): void {
+  const input = event.target as HTMLInputElement;
+
+  if (input.files && input.files[0]) {
+    const file = input.files[0];
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      this.uploadedImage = reader.result;
+      // Here you would typically send the file to the server
+      // this.uploadImageToServer(file);
+    };
+    reader.readAsDataURL(file);
+  }
+}
 
   constructor(
     private users: CustomerService
