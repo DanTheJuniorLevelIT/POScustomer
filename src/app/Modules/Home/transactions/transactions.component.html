@@ -39,6 +39,7 @@
           </a></span> -->
       </div>
       <hr>
+      <div class="table-container">
           <table class="table table-condensed table-bordered table-hover" id="log-records">
               <thead>
                 <tr>
@@ -52,25 +53,27 @@
                   <th scope="col" class="text-center">TOTAL</th>
                 </tr>
               </thead>
-              <tbody>
-                @for(c of customer; track c.CustID){
-                  <tr>
-                    
-                    <td class="text-center">{{ c.Date}}</td>
-                    <td class="text-center"><img style="width: 50px; height: 50px;" [src]="c.img" alt="image"></td>
-                    <td class="text-center">{{ c.Prod_name }}</td>
-                    <td class="text-center">{{ c.Size }}</td>
-                    <td class="text-center">{{ c.quantity }}</td>
-                    <td class="text-center">{{ c.UnitPrice }}</td>
-                    <td class="text-center">{{ c.Total }}</td>
-        
-                    <!-- <td class="text-center"><i class="fa fa-eye" aria-hidden="true" ></i></td>  -->
-                    <!-- [routerLink]="['/Usermain/Student/Student/update',a.studentID]" -->
-                                      
-                  </tr>
-                }                 
-              </tbody>
-          </table>
+                <tbody>
+                  @for(c of customer; track c.CustID){
+                    <tr>
+                      
+                      <td class="text-center">{{ c.Date}}</td>
+                      <td class="text-center"><img style="width: 50px; height: 50px;" [src]="c.img" alt="image"></td>
+                      <td class="text-center">{{ c.Prod_name }}</td>
+                      <td class="text-center">{{ c.Size }}</td>
+                      <td class="text-center">{{ c.quantity }}</td>
+                      <td class="text-center">{{ c.UnitPrice }}</td>
+                      <td class="text-center">{{ c.Total }}</td>
+          
+                      <!-- <td class="text-center"><i class="fa fa-eye" aria-hidden="true" ></i></td>  -->
+                      <!-- [routerLink]="['/Usermain/Student/Student/update',a.studentID]" -->
+                                        
+                    </tr>
+                  }                 
+                </tbody>
+                
+              </table>
+            </div>
           <div class="content">
             <div class="text-right container-fluid mt-3 shadow p-1">
               <p class="h1 fw-bold display-5">

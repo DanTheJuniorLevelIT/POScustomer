@@ -1,4 +1,4 @@
-<div class="container-fluid p-5">
+<!-- <div class="container-fluid p-5">
     <div class="row gutters justify-content-center align-items-center" style="height: 100vh;">
         <div class="col-xl-6 col-lg-3 col-md-12 col-sm-12 col-12 d-flex justify-content-center">
             <div class="card w-100" style="max-width: 400px;">
@@ -9,7 +9,7 @@
                         </div>
                         <div class="user-profile mt-3" *ngFor="let u of user">
                             <div class="user-avatar">
-                                <img [src]="uploadedImage || 'https://bootdey.com/img/Content/avatar/avatar7.png'" alt="User Avatar">
+                                <img [src]="u.accImg || 'https://bootdey.com/img/Content/avatar/avatar7.png'" alt="User Avatar">
                             </div>
 
                             <div class="text-left container-fluid mt-3 shadow p-1">
@@ -25,15 +25,45 @@
                             
                         </div>
 
-                        <input type="file" (change)="onFileSelected($event)" style="display: none;" #fileInput>
-                        <button class="submit" (click)="fileInput.click()">Upload image</button>
+                        <form [formGroup]="AccountForm" (ngSubmit)="onPost()">
+                            <h4>Upload Account Image</h4>
+                            <input type="file" (change)="onFileSelected($event)" #fileInput>
+                            <button class="submit">Upload image</button>
+                        </form>
 
                     </div>
                 </div>
             </div>
         </div>
         <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
-            <!-- Your content for the second column goes here -->
+        </div>
+    </div>
+</div> -->
+<div class="wrapper">
+    <div class="profile-card" *ngFor="let u of user">
+        
+
+        <div class="profile-info" *ngIf="user">
+            <div class="profile-picture">
+                <img [src]="u.accImg || 'https://bootdey.com/img/Content/avatar/avatar7.png'" alt="Profile Picture"> 
+            </div>
+            <h2>Account Details</h2>
+            <ul>
+                <!-- <li style="text-align: left;"><i class="fa fa-id-card"></i> User ID: {{ userDetails.UserID }}</li> -->
+                <li style="text-align: left;"><i class="fa fa-user"></i> Name: {{ u.Firstname}} {{ u.Middlename}} {{ u.Lastname}}</li>
+                <li style="text-align: left;"><i class="fa fa-calendar"></i> Birthdate: {{ u.Birthdate }}</li>
+                <li style="text-align: left;"><i class="fa fa-phone"></i> Contact: {{ u.Contact }}</li>
+                <li style="text-align: left;"><i class="fa fa-home"></i> Address: {{ u.Address }}</li>
+            </ul>
+            <form [formGroup]="AccountForm" (ngSubmit)="onPost()">
+                <h4>Upload Account Image</h4>
+                <input type="file" (change)="onFileSelected($event)" #fileInput>
+                <button class="submit">Upload image</button>
+            </form>
+        </div>
+
+        <div class="not-logged-in" *ngIf="!user">
+            <p>You are not logged in.</p> 
         </div>
     </div>
 </div>
